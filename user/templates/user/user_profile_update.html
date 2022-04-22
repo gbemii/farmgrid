@@ -1,0 +1,46 @@
+{% extends 'user/base.html' %}
+{% block content %}
+
+
+
+		 <!-- content @s -->
+            <div class="nk-content nk-content-lg nk-content-fluid">
+                <div class="container-xl wide-lg">
+                    <div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            <div class="kyc-app wide-sm m-auto">
+                                <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
+                                    <div class="nk-block-head-content text-center">
+                                        <h2 class="nk-block-title fw-normal">Begin your ID-Verification</h2>
+                                        <div class="nk-block-des">
+                                            <p>To comply with regulation each participant will have to go through indentity verification (KYC/AML) to prevent fraud causes. </p>
+                                        </div>
+                                        <div class="nk-block-head-sub"><a href="{% url 'personal' %}" class="text-soft back-to"><em class="icon ni ni-arrow-left"> </em><span>Back</span></a>
+                                        </div>
+                                    </div>
+                                </div><!-- nk-block -->
+                                <div>
+									<form method ='POST'>
+										{% csrf_token %}
+										
+										{{form.as_p}}
+								
+										<button class="btn" type="submit"> submit</button>
+									</form>
+								</div>
+
+                               
+                            </div><!-- .kyc-app -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content @e -->
+		
+
+
+			
+
+
+
+ {% endblock content%}

@@ -1,0 +1,146 @@
+{% extends 'administrator/base.html' %}
+
+
+   {% block content %}
+
+
+
+
+            <!-- content @s -->
+            <div class="nk-content nk-content-fluid">
+                <div class="container-xl wide-xl">
+                    <div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            <div class="nk-block-head nk-block-head-sm">
+                                <div class="nk-block-between g-3">
+                                    <div class="nk-block-head-content">
+                                        <h3 class="nk-block-title page-title">User / <strong class="text-primary small">{{person.first_name}} {{person.last_name}}</strong></h3>
+                                        <div class="nk-block-des text-soft">
+                                            <ul class="list-inline">
+                                                <li>User ID: <span class="text-base">{{person.id}}</span></li>
+                                                <li>Last Login: <span class="text-base">{{person.last_login}} PM</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="nk-block-head-content">
+                                        <a href="{% url 'user_list'%}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
+                                        <a href="{% url 'user_list'%}" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
+                                    </div>
+                                </div>
+                            </div><!-- .nk-block-head -->
+                            <div class="nk-block">
+                                <div class="card card-bordered">
+                                    <div class="card-aside-wrap">
+                                        <div class="card-content">
+                                            <ul class="nav nav-tabs nav-tabs-mb-icon nav-tabs-card">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="#"><em class="icon ni ni-user-circle"></em><span>Personal</span></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><em class="icon ni ni-repeat"></em><span>Transactions</span></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><em class="icon ni ni-file-text"></em><span>Documents</span></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><em class="icon ni ni-bell"></em><span>Notifications</span></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><em class="icon ni ni-activity"></em><span>Activities</span></a>
+                                                </li>
+                                                <!-- <li class="nav-item nav-item-trigger d-xxl-none">
+                                                    <a href="#" class="toggle btn btn-icon btn-trigger" data-target="userAside"><em class="icon ni ni-user-list-fill"></em></a>
+                                                </li> -->
+                                            </ul><!-- .nav-tabs -->
+                                            <div class="card-inner">
+                                                <div class="nk-block">
+                                                    <div class="nk-block-head">
+                                                        <h5 class="title">User Personal Information</h5>
+                                                       <!--  <p>Basic info, like your name and address, that you use on Nio Platform.</p> -->
+                                                    </div><!-- .nk-block-head -->
+                                                    <div class="profile-ud-list">
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">Title</span>
+                                                                <span class="profile-ud-value">Mr.</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">Full Name</span>
+                                                                <span class="profile-ud-value">{{person.first_name}} {{person.last_name}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">Date of Birth</span>
+                                                                <span class="profile-ud-value">{{person.date_of_birth}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">Surname</span>
+                                                                <span class="profile-ud-value">{{person.last_name}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">Mobile Number</span>
+                                                                <span class="profile-ud-value">{{person.phone_number}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">Email Address</span>
+                                                                <span class="profile-ud-value">{{person.email}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">User Access</span>
+                                                                <span class="profile-ud-value">{{person.is_active}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">User Status</span>
+                                                                <span class="profile-ud-value">{{person.is_client}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">admin Status</span>
+                                                                <span class="profile-ud-value">{{person.is_admin}}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-ud-item">
+                                                            <div class="profile-ud wider">
+                                                                <span class="profile-ud-label">superuser Status</span>
+                                                                <span class="profile-ud-value">{{person.is_superuser}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- .profile-ud-list -->
+                                                </div><!-- .nk-block -->
+                                                        
+                                                
+                                            </div><!-- .card-inner -->
+                                        </div><!-- .card-content -->
+                                        
+                                    </div><!-- .card-aside-wrap -->
+                                </div><!-- .card -->
+                            </div><!-- .nk-block -->
+                            <div class="nk-block">
+                                
+                                <div class="nk-block-head-content">
+                                    <a href="{% url 'Update_user' person.id %}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-right"></em><span>Update</span></a>
+                                    <a href="{% url 'Update_user' person.id %}" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-right"></em></a>
+                                </div>
+                            </div><!-- .nk-block -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content @e -->
+
+ {% endblock content  %}
