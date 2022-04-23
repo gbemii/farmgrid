@@ -16,7 +16,7 @@
                                     <div class="nk-block-head-content">
                                         <h3 class="nk-block-title page-title">Products</h3>
                                     </div><!-- .nk-block-head-content -->
-                                    <div class="nk-block-head-content">
+                                    <!-- <div class="nk-block-head-content">
                                         <div class="toggle-wrap nk-block-tools-toggle">
                                             <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
                                             <div class="toggle-expand-content" data-content="pageMenu">
@@ -48,7 +48,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div><!-- .nk-block-head-content -->
+                                    </div> --><!-- .nk-block-head-content -->
                                 </div><!-- .nk-block-between -->
                             </div><!-- .nk-block-head -->
                             <div class="nk-block">
@@ -57,20 +57,20 @@
                                         <div class="card-inner p-0">
                                             <div class="nk-tb-list">
                                                 <div class="nk-tb-item nk-tb-head">
-                                                    <div class="nk-tb-col nk-tb-col-check">
+                                                   <!--  <div class="nk-tb-col nk-tb-col-check">
                                                         <div class="custom-control custom-control-sm custom-checkbox notext">
                                                             <input type="checkbox" class="custom-control-input" id="pid">
                                                             <label class="custom-control-label" for="pid"></label>
                                                         </div>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-sm"><span>Name</span></div>
+                                                    </div> -->
+                                                    <div class="nk-tb-col tb-col"><span>Name</span></div>
                                                     <div class="nk-tb-col"><span>MONTHLY INTEREST</span></div>
                                                     <div class="nk-tb-col"><span>DURATION</span></div>
                                                     <div class="nk-tb-col"><span>R.O.I</span></div>
                                                     <div class="nk-tb-col tb-col-md"><span>APY</span></div>
-                                                    <div class="nk-tb-col tb-col-md"><em class="tb-asterisk icon ni ni-star-round"></em></div>
-                                                    <div class="nk-tb-col nk-tb-col-tools">
-                                                        <ul class="nk-tb-actions gx-1 my-n1">
+                                                    <!-- <div class="nk-tb-col tb-col-md"><em class="tb-asterisk icon ni ni-star-round"></em></div> -->
+                                                    <!-- <div class="nk-tb-col nk-tb-col-tools"> -->
+                                                        <!-- <ul class="nk-tb-actions gx-1 my-n1">
                                                             <li class="mr-n1">
                                                                 <div class="dropdown">
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
@@ -84,8 +84,8 @@
                                                                     </div>
                                                                 </div>
                                                             </li>
-                                                        </ul>
-                                                    </div>
+                                                        </ul> -->
+                                                    <!-- </div> -->
                                                 </div><!-- .nk-tb-item -->
 
 
@@ -95,17 +95,17 @@
 
 
                                                 <div class="nk-tb-item">
-                                                    <div class="nk-tb-col nk-tb-col-check">
+                                                    <!-- <div class="nk-tb-col nk-tb-col-check">
                                                         <div class="custom-control custom-control-sm custom-checkbox notext">
                                                             <input type="checkbox" class="custom-control-input" id="pid1">
                                                             <label class="custom-control-label" for="pid1"></label>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="nk-tb-col tb-col-sm">
-                                                        <span class="tb-product">
+                                                        <a href="{% url 'farm_details' farms.farm_id %}"><span class="tb-product">
                                                             <img src="./images/product/a.png" alt="" class="thumb">
                                                             <span class="title">{{ farms.farm_name }}</span>
-                                                        </span>
+                                                        </span></a>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         <span class="tb-sub">{{ farms.monthly_interest }}%</span>
@@ -119,28 +119,28 @@
                                                     <div class="nk-tb-col tb-col-md">
                                                         <span class="tb-sub">{{ farms.apy }}%</span>
                                                     </div>
-                                                    <div class="nk-tb-col tb-col-md">
+                                                    <!-- <div class="nk-tb-col tb-col-md">
                                                         <div class="asterisk tb-asterisk">
                                                             <a href="#"><em class="asterisk-off icon ni ni-star"></em><em class="asterisk-on icon ni ni-star-fill"></em></a>
                                                         </div>
-                                                    </div>
-                                                    <div class="nk-tb-col nk-tb-col-tools">
+                                                    </div> -->
+                                                    <!-- <div class="nk-tb-col nk-tb-col-tools">
                                                         <ul class="nk-tb-actions gx-1 my-n1">
                                                             <li class="mr-n1">
                                                                 <div class="dropdown">
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                     <div class="dropdown-menu dropdown-menu-right">
                                                                         <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#" data-target="addProduct" class=" btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                            <li><a href="{% url 'farm_details' farm.pk %}"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Product Orders</span></a></li>
+                                                                     
+                                                                            <li><a href="{% url 'farm_details' farms.farm_id %}"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
+                                                                            
                                                                             <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Product</span></a></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
                                                             </li>
                                                         </ul>
-                                                    </div>
+                                                    </div> -->
                                                 </div><!-- .nk-tb-item -->
                                                 
                                                 {% endfor %}
@@ -149,7 +149,7 @@
                                                 
                                             </div><!-- .nk-tb-list -->
                                         </div>
-                                        <div class="card-inner">
+                                       <!--  <div class="card-inner">
                                             <div class="nk-block-between-md g-3">
                                                 <div class="g">
                                                     <ul class="pagination justify-content-center justify-content-md-start">
@@ -160,7 +160,7 @@
                                                         <li class="page-item"><a class="page-link" href="#">6</a></li>
                                                         <li class="page-item"><a class="page-link" href="#">7</a></li>
                                                         <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-right"></em></a></li>
-                                                    </ul><!-- .pagination -->
+                                                    </ul><!- .pagination --
                                                 </div>
                                                 <div class="g">
                                                     <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
@@ -190,9 +190,9 @@
                                                         </div>
                                                         <div>OF 102</div>
                                                     </div>
-                                                </div><!-- .pagination-goto -->
-                                            </div><!-- .nk-block-between -->
-                                        </div>
+                                                </div><!- .pagination-goto -->
+                                            </div><!-- .nk-block-between --
+                                        </div> -->
                                     </div>
                                 </div>
                             </div><!-- .nk-block -->
